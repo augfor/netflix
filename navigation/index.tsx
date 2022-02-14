@@ -15,6 +15,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import HomeScreen from '../screens/HomeScreen';
+import MovieDetailsScreen from '../screens/MovieDetailsScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, HomeParamList, TabTwoParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -57,6 +58,11 @@ const HomeStack = createNativeStackNavigator<HomeParamList>();
 function TabOneNavigator() {
   return (
     <HomeStack.Navigator>
+      <HomeStack.Screen
+        name="MovieDetailsScreen"
+        component={MovieDetailsScreen}
+        options={{ title: '' }}
+      />
       <HomeStack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} />
     </HomeStack.Navigator>
   );
