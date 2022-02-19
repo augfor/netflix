@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "netflix",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\afora\\Desktop\\netflix\\amplify\\backend\\api\\netflix\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authnetflix02810373"
+    },
+    "conflictResolution": {
+      "defaultResolutionStrategy": {
+        "type": "AUTOMERGE"
+      }
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 7,
+        "apiKeyExpirationDate": "2022-02-23T22:50:02.304Z",
+        "keyDescription": ""
+      }
+    ]
+  }
+}

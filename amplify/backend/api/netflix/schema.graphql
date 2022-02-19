@@ -1,0 +1,41 @@
+type Category @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  title: String!
+
+  movies: [Movie] @hasMany
+}
+
+type Movie @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  title: String!
+  poster: String!
+  year: Int
+  numberOfSeasons: Int
+  plot: String
+  cast: String
+  creator: String
+
+  categoryID: ID! @primaryKey
+
+  seasons: [Season] @hasMany
+}
+
+type Season @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  name: String!
+
+  movieID: ID! @primaryKey
+
+  episodes: [Episode] @hasMany
+}
+
+type Episode @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  title: String!
+  poster: String!
+  duration: String!
+  plot: String
+  video: String!
+
+  seasonID: ID! @primaryKey
+}
